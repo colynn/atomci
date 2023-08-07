@@ -1,6 +1,6 @@
 module github.com/go-atomci/atomci
 
-go 1.18
+go 1.20
 
 replace (
 	k8s.io/api => github.com/kubernetes/api v0.17.0
