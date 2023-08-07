@@ -1,5 +1,5 @@
 ## build
-FROM golang:1.18-buster AS build-env
+FROM golang:1.20-buster AS build-env
 
 COPY . /go/src/atomci
 
