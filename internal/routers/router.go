@@ -153,6 +153,11 @@ func RegisterRoutes() {
 				beego.NSRouter("/pipelines/:project_id/publishes/:publish_id/stages/:stage_id/steps/:step_name", &api.PipelineController{}, "get:GetStepInfo;post:RunStep"),
 				beego.NSRouter("/pipelines/:project_id/publishes/:publish_id/stages/:stage_id/steps/:step_name/callback", &api.PipelineController{}, "post:RunStepCallback"),
 				beego.NSRouter("/pipelines/stages/:stage_id/jenkins-config", &api.PipelineController{}, "get:GetJenkinsConfig"),
+			),
+			beego.NSNamespace("/v2",
+				// 任务模板
+				beego.NSRouter("/tasktmpls", &api.TaskTemplateController{}, "get:GetTaskTmpls;post:GetTaskTmplsByPagination"),
+				beego.NSRouter("/tasktmpls/create", &api.TaskTemplateController{}, "post:CreateTaskTmpl"),
 			))
 
 	beego.AddNamespace(publishAPI)
